@@ -8,7 +8,7 @@ if platform?('debian', 'ubuntu')
   end
 
   execute "Install package" do
-    command "apt-get install #{node[:oj][:pkgname]}"
+    command "apt-get -y install #{node[:oj][:pkgname]}"
   end
 
 end
