@@ -1,7 +1,13 @@
 # Cookbook : setavar
 
-# #{node[:een][:twee]} is set in attributes/default.rb
+# #{node[:bar]} is set in attributes/default.rb
 ENV['FOO'] = "#{node[:bar]}"
 
 Chef::Log.info(">>>>> #{node[:bar]} <<<<<")
+
+bash "Testing for ENV" do
+  code<<-EOF
+  echo $FOO
+EOF
+end
 
