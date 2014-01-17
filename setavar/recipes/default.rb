@@ -6,8 +6,8 @@ ENV['FOO'] = "#{node[:bar]}"
 Chef::Log.info(">>>>> #{node[:bar]} <<<<<")
 
 bash "Testing for ENV" do
-  code<<-EOF
-  echo $FOO
-EOF
+  code <<-EOH
+  echo $FOO >> /tmp/setavar.tmp
+EOH
 end
 
